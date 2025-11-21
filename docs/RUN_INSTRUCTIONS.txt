@@ -1,0 +1,78 @@
+==============================================================
+           DOT-NET REST API — RUN INSTRUCTIONS
+==============================================================
+
+This document explains how to run the .NET REST API backend
+either on the default port or on a custom port.
+
+--------------------------------------------------------------
+1. RUN THE PROJECT USING DEFAULT PORTS
+--------------------------------------------------------------
+# Simply start the backend using the default .NET ports.
+# Default Ports:
+#   HTTP  → 5000
+#   HTTPS → 5001
+
+dotnet run
+
+
+--------------------------------------------------------------
+2. RUN API ON A CUSTOM PORT (RUNTIME ONLY)
+--------------------------------------------------------------
+# Use this if you want to change the port WITHOUT modifying
+# any configuration files such as appsettings.json.
+
+# Syntax:
+dotnet run --urls "http://localhost:<PORT>"
+
+# Examples:
+
+# Run on port 7000
+dotnet run --urls "http://localhost:7000"
+
+# Run on port 9090
+dotnet run --urls "http://localhost:9090"
+
+# Run on both HTTP + HTTPS (optional)
+dotnet run --urls "http://localhost:5005;https://localhost:7005"
+
+
+--------------------------------------------------------------
+3. STOP THE BACKEND SERVER
+--------------------------------------------------------------
+# Use this keyboard shortcut in the terminal:
+
+CTRL + C
+
+
+--------------------------------------------------------------
+4. CHECK API ENDPOINTS USING CURL
+--------------------------------------------------------------
+
+# Fetch all users
+curl http://localhost:5000/users
+
+# Add a new user
+curl -X POST http://localhost:5000/users -H "Content-Type: application/json" -d "{\"username\":\"raghu\", \"email\":\"raghu@gmail.com\"}"
+
+# Get user by ID
+curl http://localhost:5000/users/1
+
+# Update user
+curl -X PUT http://localhost:5000/users/1 -H "Content-Type: application/json" -d "{\"username\":\"raghu updated\", \"email\":\"raghu@gmail.com\"}"
+
+# Delete user
+curl -X DELETE http://localhost:5000/users/1
+
+
+--------------------------------------------------------------
+5. NOTES
+--------------------------------------------------------------
+# - No code changes required to run on a custom port.
+# - If --urls is NOT provided, the backend automatically runs
+#   on the default ports (5000/5001).
+# - Useful for running multiple backend systems at the same time.
+
+==============================================================
+                   END OF INSTRUCTIONS
+==============================================================
