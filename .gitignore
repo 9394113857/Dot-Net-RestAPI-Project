@@ -1,0 +1,56 @@
+
+---
+
+# 🧱 **.gitignore** (for .NET + SQLite + VS Code)
+
+```gitignore
+# Build directories
+bin/
+obj/
+
+# User-specific files
+*.user
+*.userosscache
+*.suo
+*.cache
+*.tmp
+
+# SQLite database
+src/DotNetRestApiApp/app.db
+src/DotNetRestApiApp/app.db-shm
+src/DotNetRestApiApp/app.db-wal
+
+# VS Code
+.vscode/
+
+# Logs
+logs/
+*.log
+
+# NuGet
+.nuget/
+packages/
+*.nupkg
+project.lock.json
+
+# DotNet local tools
+.config/
+
+# Publish directory
+publish/
+
+# Resharper
+_ReSharper*/
+*.DotSettings.user
+
+# Rider
+.idea/
+
+# Backup files
+*.swp
+*.bak
+*.old
+
+# Environment files
+.env
+.env.*

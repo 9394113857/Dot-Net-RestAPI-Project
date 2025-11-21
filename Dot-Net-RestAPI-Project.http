@@ -1,0 +1,6 @@
+@Dot_Net_RestAPI_Project_HostAddress = http://localhost:5231
+
+GET {{Dot_Net_RestAPI_Project_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
